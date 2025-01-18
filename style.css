@@ -21,7 +21,7 @@ nav{
 }
 
 .upper{
-    
+    overflow: hidden;
     height: 70px;
     display:flex;
     flex-direction: row;
@@ -34,12 +34,39 @@ nav{
 .services{
     display:flex;
     flex-direction: row;
-    gap: 20px;
+    
     width: 60%;
-    flex-wrap: wrap;
+   
+    overflow-y: hidden;
+    overflow-x: hidden;
+    
     justify-content: flex-end;
     font-size: small;
 }
+
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    --s: 25px;
+    
+    --_d: calc(0.353*var(--s));
+    width: calc(var(--s) + var(--_d));
+    aspect-ratio: 1;
+    display: grid;
+    filter: drop-shadow(0 0 0 #fff);
+    animation: l2 0.8s infinite;
+  }
+  .loader:before {
+    content: "";
+    clip-path: polygon(var(--_d) 0,100% 0,100% calc(100% - var(--_d)),calc(100% - var(--_d)) 100%,0 100%,0 var(--_d));
+    background:
+      conic-gradient(from -90deg at var(--s) var(--_d),
+       #fff 135deg,#666 0 270deg,#aaa 0);
+  }
+  @keyframes l2{
+    50% {filter:drop-shadow(0 0 5px #fff)}
+  }
 
 .details > p{
     font-size: smaller;
@@ -50,7 +77,8 @@ nav{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
+    width: 220px;
+   
     height: 60px;
     gap: 12px;
     border-right: 0.1px solid rgb(185, 185, 185);
@@ -104,4 +132,176 @@ nav{
 
 .nav_box:hover{
     background-color: #E5E5E5;
+}
+
+/* //search section starts here */
+
+.search{
+    height: 45vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgb(44,42,42);background: linear-gradient(0deg, rgba(44,42,42,1) 25%, rgba(85,81,81,1) 53%);}
+
+.search > h1{
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+.search_form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.input{
+    height:50px;
+    border-right: 1px solid grey !important;
+    width: 200px;
+    border: none;
+    padding: 0 10px;
+
+}
+
+.bt{
+    height:50px;
+    width: 130px;
+    font-size: large;
+    font-weight: 600;
+    background-color: #128036;
+    color: white;
+    border: none;
+
+}
+
+.prev > *{
+    color: white;
+}
+
+.prev{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 75%;
+}
+
+.prev-desc{
+    color: white;
+    border: 1.5px solid white; height: 30px;
+    width: auto;
+    height: 35px;
+    border-radius: 7px;
+    padding: 7px 15px;
+}
+
+.promotion{
+    display:flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 3vw;
+    padding-left: 5%;
+    cursor: pointer;
+
+}
+
+
+.promotion > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.newsletter{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    margin: 0 7vw 7vw 7vw;
+    height: 100px;
+    border: 1px solid rgb(178, 178, 178);
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+
+.left{
+    display: flex;
+    gap: 20px;
+    width: 50%;
+}
+
+.right{
+    display: flex;
+    gap: 10px;
+    width: 50%;
+}
+
+.right > input{
+    height: 40px;
+    width: 70%;
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+.right > button{
+    height: 40px;
+    width: 25%;
+    border: none;
+    background-color: #EE2A24;
+    color: white;
+    border-radius: 10px;
+}
+
+/* about section */
+
+.about{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F3F5F7;;
+    padding: 5vw;
+}
+
+
+.info{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+}
+
+
+footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6D787D;
+    padding: 5vw;
+    color: white;
+}
+
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    
+}
+
+.top > *{
+    color:#F3F5F7
 }
